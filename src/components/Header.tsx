@@ -1,13 +1,13 @@
 import { HeartPulse, Menu, Sparkles, X } from 'lucide-react';
 import { useState } from 'react';
-import { calendlyUrl } from '../lib/calendly';
+import { calendlyUrl, openCalendlyPopup } from '../lib/calendly';
 
 const navItems = [
   { label: 'Services', href: '#services' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'About', href: '#about' },
-  { label: 'Book a Call', href: calendlyUrl },
+  { label: 'Book a Call', href: calendlyUrl, isCalendly: true },
 ];
 
 export default function Header() {
@@ -31,6 +31,7 @@ export default function Header() {
             <a
               key={item.label}
               href={item.href}
+              onClick={item.isCalendly ? openCalendlyPopup : undefined}
               className="text-sm font-bold text-brandDark/70 transition hover:text-brandPurple focus:outline-none focus:ring-4 focus:ring-brandPurple/15"
             >
               {item.label}
@@ -38,7 +39,7 @@ export default function Header() {
           ))}
         </div>
 
-        <a href={calendlyUrl} className="btn-primary hidden lg:inline-flex">
+        <a href={calendlyUrl} className="btn-primary hidden lg:inline-flex" onClick={openCalendlyPopup}>
           Book a Brand Checkup
         </a>
 
@@ -61,12 +62,24 @@ export default function Header() {
                 key={item.label}
                 href={item.href}
                 className="rounded-2xl px-4 py-3 text-sm font-bold text-brandDark/75 hover:bg-brandPurple/5"
-                onClick={() => setOpen(false)}
+                onClick={(event) => {
+                  if (item.isCalendly) {
+                    openCalendlyPopup(event);
+                  }
+                  setOpen(false);
+                }}
               >
                 {item.label}
               </a>
             ))}
-            <a href={calendlyUrl} className="btn-primary mt-2" onClick={() => setOpen(false)}>
+            <a
+              href={calendlyUrl}
+              className="btn-primary mt-2"
+              onClick={(event) => {
+                openCalendlyPopup(event);
+                setOpen(false);
+              }}
+            >
               Book a Brand Checkup
             </a>
           </div>
