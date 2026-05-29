@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #1a1a1a;
+  background: #ffffff;
+  font-family: Inter, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brandPink px-5 py-3 text-sm font-extrabold text-white shadow-softPink transition duration-200 hover:-translate-y-0.5 hover:bg-[#e91d87] focus:outline-none focus:ring-4 focus:ring-brandPink/25;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-brandPurple/20 bg-white px-5 py-3 text-sm font-extrabold text-brandPurple shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-brandPurple/40 hover:bg-brandPurple/5 focus:outline-none focus:ring-4 focus:ring-brandPurple/20;
+  }
+
+  .card-hover {
+    @apply transition duration-200 hover:-translate-y-1 hover:shadow-glossy;
+  }
+
+  .gloss {
+    @apply relative overflow-hidden;
+  }
+
+  .gloss::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 42%);
+    pointer-events: none;
+  }
+}
