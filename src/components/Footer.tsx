@@ -1,6 +1,5 @@
 import { Facebook, Instagram, Linkedin, Sparkles } from 'lucide-react';
-
-const calendlyUrl = 'https://calendly.com/brandnurses/brand-checkup';
+import { calendlyUrl } from '../lib/calendly';
 
 const serviceLinks = ['Social Media', 'Google Profile', 'VA Support', 'Airbnb Support', 'Brand Cleanup'];
 
