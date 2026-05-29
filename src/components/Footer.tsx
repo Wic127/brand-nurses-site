@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Linkedin, Sparkles } from 'lucide-react';
-import { calendlyUrl } from '../lib/calendly';
+import { calendlyUrl, openCalendlyPopup } from '../lib/calendly';
 
 const serviceLinks = ['Social Media', 'Google Profile', 'VA Support', 'Airbnb Support', 'Brand Cleanup'];
 
@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="lg:text-right">
-            <a href={calendlyUrl} className="btn-primary">
+            <a href={calendlyUrl} className="btn-primary" onClick={openCalendlyPopup}>
               Book a Call
             </a>
             <div className="mt-5 flex gap-3 lg:justify-end" aria-label="Social media links">
