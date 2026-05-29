@@ -1,5 +1,5 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { calendlyUrl } from '../lib/calendly';
+import { calendlyUrl, openCalendlyPopup } from '../lib/calendly';
 
 const packages = [
   {
@@ -56,7 +56,7 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href={calendlyUrl} className={item.featured ? 'mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-extrabold text-brandPurple transition hover:-translate-y-0.5' : 'btn-primary mt-7 w-full'}>
+              <a href={calendlyUrl} className={item.featured ? 'mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-extrabold text-brandPurple transition hover:-translate-y-0.5' : 'btn-primary mt-7 w-full'} onClick={openCalendlyPopup}>
                 Book a Call
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
