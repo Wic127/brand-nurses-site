@@ -1,5 +1,5 @@
 import { ArrowRight, BadgeCheck, CheckCircle2, HeartPulse, Sparkles } from 'lucide-react';
-import { calendlyUrl } from '../lib/calendly';
+import { calendlyUrl, openCalendlyPopup } from '../lib/calendly';
 
 const checklist = [
   'Social presence',
@@ -27,7 +27,7 @@ export default function Hero() {
             busy small business owners.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href={calendlyUrl} className="btn-primary">
+            <a href={calendlyUrl} className="btn-primary" onClick={openCalendlyPopup}>
               Book a Brand Checkup
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
