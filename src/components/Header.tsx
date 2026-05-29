@@ -1,7 +1,6 @@
 import { HeartPulse, Menu, Sparkles, X } from 'lucide-react';
 import { useState } from 'react';
-
-const calendlyUrl = 'https://calendly.com/brandnurses/brand-checkup';
+import { calendlyUrl } from '../lib/calendly';
 
 const navItems = [
   { label: 'Services', href: '#services' },
