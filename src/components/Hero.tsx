@@ -1,6 +1,5 @@
 import { ArrowRight, BadgeCheck, CheckCircle2, HeartPulse, Sparkles } from 'lucide-react';
-
-const calendlyUrl = 'https://calendly.com/brandnurses/brand-checkup';
+import { calendlyUrl } from '../lib/calendly';
 
 const checklist = [
   'Social presence',
