@@ -1,6 +1,5 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-
-const calendlyUrl = 'https://calendly.com/brandnurses/brand-checkup';
+import { calendlyUrl } from '../lib/calendly';
 
 const packages = [
   {
