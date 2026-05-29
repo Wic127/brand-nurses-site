@@ -12,5 +12,5 @@ npm run dev
 The booking CTAs point to:
 
 ```text
-https://calendly.com/brandnurses/brand-checkup
+https://calendly.com/daddona-michael/new-meeting
 ```
